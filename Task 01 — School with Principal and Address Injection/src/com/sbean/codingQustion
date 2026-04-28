@@ -1,0 +1,74 @@
+spring day 5
+--------------------
+                                                          Java-Based Configuration using AppConfig
+
+🎯 Objective
+Task 1 — School with Principal and Address Injection
+🎯 Objective
+
+Demonstrate multiple object injection using AppConfig in Spring 5 where a School depends on both Principal and Address objects.
+
+🧱 Class-wise Design
+1️.Principal Class
+
+Attributes:
+
+String name
+
+int experience
+
+Methods:
+
+Setter methods and a display method to show principal details.
+
+2️.Address Class
+
+Attributes:
+
+String city
+
+String state
+
+Methods:
+
+Setter methods and a method to display address info.
+
+3️.School Class
+
+Attributes:
+
+String schoolName
+
+Principal principal
+
+Address address
+
+Methods:
+
+Setter methods for all fields.
+
+showDetails() method to display complete school information.
+
+4️.AppConfig Class
+
+Responsibilities:
+
+Annotated with @Configuration.
+
+Define beans for Principal, Address, and School.
+
+Inject both Principal and Address beans into the School bean.
+
+5️.MainApp Class
+
+Responsibilities:
+
+Load Spring context using AnnotationConfigApplicationContext.
+
+Retrieve the School bean and call showDetails().
+
+📘 Expected Output
+========================
+School: Sunshine High School
+Principal: Dr. Anil Kumar (20 years experience)
+Location: Hyderabad, Telangana
