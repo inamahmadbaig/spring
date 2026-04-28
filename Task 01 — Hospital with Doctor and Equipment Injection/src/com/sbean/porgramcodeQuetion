@@ -1,0 +1,77 @@
+Task 1 — Hospital with Doctor and Equipment Injection
+
+🎯 Objective:
+Demonstrate constructor-based dependency injection using AppConfig where a Hospital depends on both a Doctor and an Equipment object.
+
+🧱 Class-wise Design
+
+1️.Doctor Class
+Attributes:
+
+String name
+
+String specialization
+
+Constructor:
+
+Initialize both fields
+
+Method:
+
+showDoctor() → prints doctor details
+
+2️.Equipment Class
+Attributes:
+
+String equipmentName
+
+double cost
+
+Constructor:
+
+Initialize both fields
+
+Method:
+
+showEquipment() → prints equipment info
+
+3️.Hospital Class
+Attributes:
+
+String hospitalName
+
+Doctor doctor
+
+Equipment equipment
+
+Constructor:
+
+Inject all three via constructor
+
+Method:
+
+showDetails() → display full hospital info
+
+4️.AppConfig Class
+Responsibilities:
+
+Annotated with @Configuration
+
+Define beans for Doctor, Equipment, and Hospital
+
+Inject supporting beans into Hospital constructor
+
+5️. MainApp Class
+Responsibilities:
+
+Load AnnotationConfigApplicationContext
+
+Retrieve Hospital bean
+
+Call showDetails()
+
+📘 Expected Output:
+
+Hospital: City Care Hospital
+Doctor: Dr. Meena Gupta (Cardiologist)
+Equipment: ECG Machine (Cost: ₹2,50,000)
