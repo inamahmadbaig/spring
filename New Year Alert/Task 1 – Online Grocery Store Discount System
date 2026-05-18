@@ -1,0 +1,23 @@
+Spring Core @Value Annotation - Scenario Based Tasks
+Task 1 – Online Grocery Store Discount System
+Project Name: GroceryDiscountApp
+Objective: Create a Spring Core Maven application that uses @Value annotation to inject grocery store details and
+discount information.
+Requirements:
+1. Create Maven Project and add Spring Core dependency in pom.xml.
+2. Create Class: GroceryStore.java
+3. Annotate class with @Component.
+4. Use @Value annotation to inject all field values.
+Fields:
+• storeId
+• storeName
+• location
+• discountPercentage
+• homeDeliveryAvailable
+Methods:
+• showStoreDetails()
+• calculateDiscount(double amount)
+5. Create Configuration Class with @Configuration and @ComponentScan.
+6. Create Main Class.
+Main Class Requirements: Load Spring container, get bean from container, display store details and calculate
+grocery discount.
