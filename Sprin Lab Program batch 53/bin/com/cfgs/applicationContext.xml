@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- LocalDateTime Bean -->
+    <bean id="dateTimeObj" class="java.time.LocalDateTime" factory-method="now"/>
+
+    <!-- DatePrinter Bean -->
+    <bean id="printer" class="com.sbeans.DatePrinter">
+        <property name="currentDateTime" ref="dateTimeObj"/>
+    </bean>
+
+</beans>
