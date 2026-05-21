@@ -1,0 +1,72 @@
+Task 2 — Employee with Department and Address Injection
+🎯 Objective
+Illustrate multiple bean injection in Spring 5 using setter-based dependency injection configured through AppConfig.
+
+🧱 Class-wise Design
+1️.Department Class
+
+Attributes:
+
+int deptId
+
+String deptName
+
+Methods:
+
+Setter methods and showDepartment().
+
+2️.Address Class
+
+Attributes:
+
+String city
+
+String country
+
+Methods:
+
+Setter methods and showAddress().
+
+3️. Employee Class
+
+Attributes:
+
+int empId
+
+String empName
+
+Department department
+
+Address address
+
+Methods:
+
+Setter methods for all fields.
+
+showEmployeeDetails() method to display all info.
+
+4️.AppConfig Class
+
+Responsibilities:
+
+Annotated with @Configuration.
+
+Define beans for Department, Address, and Employee.
+
+Inject both supporting beans (Department, Address) into the Employee bean.
+
+5️. MainApp Class
+
+Responsibilities:
+
+Load Spring context.
+
+Get Employee bean.
+
+Call showEmployeeDetails().
+
+📘 Expected Output:
+---------------------
+Employee ID: 101, Name: Rohit Sharma
+Department: IT
+Address: Pune, India
