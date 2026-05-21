@@ -1,0 +1,73 @@
+Task 2 — University with Professor and Course Injection
+
+🎯 Objective:
+Show constructor-based injection in a university system where a University has a Professor and a Course.
+
+🧱 Class-wise Design
+
+1️.Professor Class
+Attributes:
+
+String name
+
+int yearsOfExperience
+
+Constructor:
+
+Initialize both fields
+
+Method:
+
+showProfessor() → prints professor details
+
+2️.Course Class
+Attributes:
+
+String courseName
+
+int duration (in months)
+
+Constructor:
+
+Initialize both fields
+
+Method:
+
+showCourse() → prints course details
+
+3️.University Class
+Attributes:
+
+String universityName
+
+Professor professor
+
+Course course
+
+Constructor:
+
+Inject all three via constructor
+
+Method:
+
+showDetails() → print complete info
+
+4️.AppConfig Class
+
+@Configuration + @Bean methods for all three
+
+Inject Professor and Course into University constructor
+
+5️.MainApp Class
+
+Load AnnotationConfigApplicationContext
+
+Get University bean
+
+Call showDetails()
+
+📘 Expected Output:
+
+University: National Institute of Technology
+Professor: Dr. Suresh Iyer (15 years experience)
+Course: Data Science (Duration: 6 months)
