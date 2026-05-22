@@ -1,0 +1,62 @@
+ Task 3 — MusicBand with Instruments Injection (List Collection Constructor Injection)
+
+🎯 Objective:
+Demonstrate constructor-based list injection where a band performs with multiple instruments.
+
+🧱 Class-wise Design
+
+1️. Instrument Class
+Attributes:
+
+String name
+
+String type
+
+Constructor:
+
+Initialize both fields
+
+Method:
+
+showInstrument() → display instrument info
+
+2️.MusicBand Class
+Attributes:
+
+String bandName
+
+List<Instrument> instruments
+
+Constructor:
+
+Inject both bandName and instruments via constructor
+
+Method:
+
+showBandDetails() → print band name and all instruments
+
+3️.AppConfig Class
+Responsibilities:
+
+@Configuration
+
+Define multiple Instrument beans (e.g., Guitar, Drums, Keyboard)
+
+Define MusicBand bean and inject list via constructor
+
+4. MainApp Class
+Responsibilities:
+
+Load AnnotationConfigApplicationContext
+
+Get MusicBand bean
+
+Call showBandDetails()
+
+📘 Expected Output:
+
+Music Band: RockNation
+Instruments Used:
+Name: Guitar (Type: String)
+Name: Drums (Type: Percussion)
+Name: Keyboard (Type: Electronic)

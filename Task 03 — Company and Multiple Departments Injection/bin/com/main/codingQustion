@@ -1,0 +1,60 @@
+
+Task 3 — Company and Multiple Departments Injection.
+Demonstrate setter-based dependency injection using a List collection in Spring 5, configured through Java-based configuration (AppConfig class) instead of XML.
+
+🧱 Class-wise Design
+1️.Department Class
+
+Attributes:
+
+String deptName
+
+int deptId
+
+Methods:
+
+Setter methods for both fields.
+
+A method showDepartment() to display department details.
+
+2️.Company Class
+
+Attributes:
+
+List<Department> departments
+
+Methods:
+
+Setter method to inject the list of departments.
+
+showDepartments() method to iterate and print department information.
+
+3️. AppConfig Class (Java-based Configuration)
+
+Responsibilities:
+
+Annotated with @Configuration.
+
+Define multiple Department beans (dept1, dept2, dept3) with unique data.
+
+Define one Company bean.
+
+Inject the list of department beans into the Company bean using Arrays.asList() inside the @Bean method.
+
+4️. Main Class
+
+Responsibilities:
+
+Create an ApplicationContext using AnnotationConfigApplicationContext.
+
+Load the AppConfig class.
+
+Retrieve the Company bean from the context.
+
+Invoke showDepartments() to display all department details.
+
+📘 Expected Output
+---- Company Departments ----
+Department ID: 101, Name: IT
+Department ID: 102, Name: HR
+Department ID: 103, Name: Finance
