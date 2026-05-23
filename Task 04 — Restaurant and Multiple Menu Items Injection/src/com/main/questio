@@ -1,0 +1,63 @@
+Task 4 — Restaurant and Multiple Menu Items Injection
+🎯 Objective
+Demonstrate setter-based collection injection using AppConfig where a restaurant has multiple menu items.
+
+🧱 Class-wise Design
+1️. MenuItem Class
+
+Attributes:
+
+int itemId
+
+String itemName
+
+double price
+
+Methods:
+
+Setter methods for each.
+
+A method showItem() to display item details.
+
+2️. Restaurant Class
+
+Attributes:
+
+String restaurantName
+
+List<MenuItem> menuItems
+
+Methods:
+
+Setter methods.
+
+showMenu() to list all menu items.
+
+3️. AppConfig Class
+
+Responsibilities:
+
+Marked with @Configuration.
+
+Define beans for different MenuItems like Pizza, Burger, Pasta.
+
+Create a Restaurant bean and inject the list of MenuItem beans using setter injection.
+
+4️. Main Class
+
+Responsibilities:
+
+Load AppConfig using AnnotationConfigApplicationContext.
+
+Retrieve the Restaurant bean.
+
+Call showMenu().
+
+📘 Expected Output
+Restaurant: SpiceHub
+Menu:
+Item ID: 101, Name: Pizza, Price: 250.0
+Item ID: 102, Name: Burger, Price: 150.0
+Item ID: 103, Name: Pasta, Price: 200.0
+
+
