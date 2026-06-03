@@ -1,0 +1,33 @@
+Task 1 — Payment System (Multiple Payment Gateways)
+ Objective:
+Demonstrate @Qualifier to select between multiple implementations of a PaymentService interface
+(e.g., Paytm, GooglePay, PhonePe).
+ Class-wise Design
+1 .Interface — PaymentService
+Method:
+void pay(double amount)
+2 .Class — PaytmPaymentService
+Implements PaymentService
+Method:
+Print: "Paid 
+ using Paytm"
+3 . Class — GooglePayService
+Implements PaymentService
+Method:
+Print: "Paid 
+ using GooglePay"
+4 . Class — PaymentProcessor
+Field:
+PaymentService paymentService
+Injection:
+Use @Autowired and @Qualifier("googlePayService")
+Method:
+processPayment(double amount) → delegate to injected service
+5 .AppConfig Class
+@Configuration, @ComponentScan("com.example")
+6 . MainApp Class
+Load context
+Get PaymentProcessor bean
+Call processPayment(2500.0)
+ Expected Output:
+Paid 2500.0 using GooglePay
