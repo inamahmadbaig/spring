@@ -1,0 +1,68 @@
+
+
+spring day 8
+-------------------------------------
+1. Online Learning Platform 🎓💻📚
+===================================
+Problem Statement:
+-------------------
+You are building a Spring Core application that simulates an Online Learning Platform where Students can enroll in different Courses, 
+and each Course is delivered through a specific DeliveryMode (Online, Recorded, or Classroom).
+
+The system should use interfaces + implementations + dependency injection with @Qualifier.
+
+Requirements:
+Interfaces:
+
+Course → method String getCourseName()
+
+DeliveryMode → method String deliver(String courseName)
+
+Implementations (Courses):
+
+JavaCourse → "Java Programming"
+
+PythonCourse → "Python for Beginners"
+
+DataScienceCourse → "Data Science with ML"
+
+Implementations (Delivery Modes):
+
+OnlineDelivery → delivers "Live Online"
+
+RecordedDelivery → delivers "Recorded Video"
+
+ClassroomDelivery → delivers "In-Person Classroom"
+
+Business Rules:
+
+JavaCourse uses OnlineDelivery
+
+PythonCourse uses RecordedDelivery
+
+DataScienceCourse uses ClassroomDelivery
+
+Controller:
+
+LearningController with methods:
+
+enrollJavaCourse()
+
+enrollPythonCourse()
+
+enrollDataScienceCourse()
+
+Each method prints:
+
+Enrolled in <CourseName>
+Delivered via <DeliveryMode>
+
+Config:
+
+Use @ComponentScan, @Autowired, @Qualifier.
+
+No XML.
+
+Execution:
+
+In MainApp, load Spring context, get LearningController, and test enrollments.
