@@ -1,0 +1,84 @@
+
+spring day 9 factory patten
+---------------------------------------------------------------
+
+Que 1) Notification System using Spring Core and Factory Pattern
+=================================================================
+
+Problem Statement:
+You are developing a Notification System for an application that needs to send messages to users through different communication channels.
+The system supports the following notification types:
+Email
+SMS
+Push Notification
+
+Each notification type has its own implementation for sending messages, but all follow a common interface.
+To ensure loose coupling and scalability, you must use:
+Spring Core (Annotation-based configuration)
+Factory Design Pattern with Map-based Dependency Injection
+The system should dynamically select and use the appropriate notification service at runtime based on user input.
+
+Requirements:
+===============
+
+1️) Create an interface Notification
+Method:
+String sendNotification(String message);
+
+2️) Create implementation classes:
+EmailNotification
+SMSNotification
+PushNotification
+Conditions:
+Each class must implement Notification
+Each class must be annotated with @Component
+Use the following component names:
+"email"
+"sms"
+"push"
+Behavior:
+Email → return "Email sent: <message>"
+SMS → return "SMS sent: <message>"
+Push → return "Push notification sent: <message>"
+
+3️) Create a Factory class NotificationFactory
+Conditions:
+Annotate the class with @Component
+Use Map-based Dependency Injection
+@Autowired
+private Map<String, Notification> notificationMap;
+
+Method:
+public Notification getNotification(String type)
+Logic:
+Convert input type to lowercase
+Retrieve object from notificationMap
+If object is not found → throw IllegalArgumentException("Invalid Notification Type")
+Return the corresponding Notification object
+
+4️) Create Configuration class
+Annotate with:
+@Configuration
+@ComponentScan(basePackages = "your package name")
+
+5️) Create Main Class (ELC)
+
+Class Name: NotificationApp
+
+Responsibilities:
+Load Spring container using AnnotationConfigApplicationContext
+Get NotificationFactory bean
+Take input from user:
+Notification type
+Message
+Call getNotification(type)
+Call sendNotification(message)
+Handle exception for invalid input
+
+Sample Input/Output:
+-------------------------
+Enter notification type: sms
+Enter message: Hello User
+SMS sent: Hello User
+
+#############################################################
