@@ -1,0 +1,59 @@
+2) Food Delivery System using Spring Factory Pattern
+=========================================================
+
+Problem Statement:
+You are developing a Food Delivery System where users can order food from different restaurants.
+The system supports:
+Pizza
+Burger
+Biryani
+
+Each food type has its own preparation message, but all follow a common interface.
+Use Spring Core + Factory Design Pattern (Map Injection only) to dynamically create the required food object based on user input.
+
+Requirements:
+==================
+
+1️) Create interface Food
+String prepareFood();
+
+2️) Create implementation classes:
+Pizza
+Burger
+Biryani
+Conditions:
+Annotate with @Component
+Use names:
+"pizza"
+"burger"
+"biryani"
+Output:
+Pizza → "Preparing Pizza..."
+Burger → "Preparing Burger..."
+Biryani → "Preparing Biryani..."
+
+3️) Create Factory class FoodFactory
+Annotate with @Component
+Use:
+@Autowired
+private Map<String, Food> foodMap;
+Method:
+public Food getFood(String type)
+Logic:
+Return object using map
+If invalid → throw exception
+
+4️) Create Config class
+@Configuration
+@ComponentScan
+
+5️) Main class
+Take input (food type)
+Call factory
+Print result
+
+Sample Output:
+--------------
+Enter food type: biryani
+Preparing Biryani...
+
