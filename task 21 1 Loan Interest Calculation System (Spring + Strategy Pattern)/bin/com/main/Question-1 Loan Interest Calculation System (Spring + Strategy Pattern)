@@ -1,0 +1,69 @@
+
+strategey Design pattern
+-----------------------------------------
+Question-1 Loan Interest Calculation System (Spring + Strategy Pattern)
+
+Configure beans using @Configuration and @Bean (AppConfig class)
+
+📊 Loan Types & Rules:
+----------------------
+🏠 Home Loan
+----------------
+Interest Rate: 7% annually
+Formula:
+Simple Interest = (principal × rate × time) / 100
+🚗 Car Loan
+Interest Rate: 9% annually
+Additional processing fee: ₹2000
+Formula:
+Interest + fixed processing fee
+💳 Personal Loan
+Interest Rate: 12% annually
+High-risk surcharge: 2% extra
+Formula:
+Interest calculated using (rate + surcharge)
+
+🏗️ Class Design Requirements:
+-----------------------------------------------
+1. Strategy Interface: InterestStrategy
+Methods:
+double calculateInterest(double principal, int timeInYears);
+2. Concrete Strategy Classes:
+🏠 HomeLoanInterest
+Variables:
+double rate = 7.0
+Responsibility:
+Calculate simple interest
+🚗 CarLoanInterest
+Variables:
+double rate = 9.0
+double processingFee = 2000
+Responsibility:
+Calculate interest + add fixed fee
+💳 PersonalLoanInterest
+Variables:
+double rate = 12.0
+double riskSurcharge = 2.0
+Responsibility:
+Add surcharge to rate before calculation
+3. Context Class: LoanService
+Variables:
+InterestStrategy interestStrategy
+Methods:
+setInterestStrategy(InterestStrategy strategy)
+double calculateLoanInterest(double principal, int time)
+4. Spring Configuration Class: AppConfig
+Requirements:
+Annotate class with @Configuration
+Define beans using @Bean:
+homeLoanInterest()
+carLoanInterest()
+personalLoanInterest()
+Inject appropriate strategy into LoanService
+Support runtime selection of strategy (manual or via qualifier/map)
+5. Main Runner Class: LoanApplication
+Responsibilities:
+Load Spring context using AnnotationConfigApplicationContext
+Get LoanService bean
+Dynamically select loan type (simulate user input)
+Call interest calculation
