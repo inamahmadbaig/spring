@@ -1,0 +1,94 @@
+
+Que 3)  Multi-Channel Payment System with Offers
+================================================
+
+Problem Statement:
+You are developing a Multi-Channel Payment System for an e-commerce platform.
+The system supports different payment methods:
+Credit Card
+Debit Card
+UPI
+
+Each payment type:
+Processes payment differently
+Applies different discount offers
+Returns a final payment message
+
+To maintain flexibility and scalability, implement the system using:
+
+Spring Core (Annotation-based)
+Factory Design Pattern using Map-based Injection ONLY
+
+The system should dynamically select the correct payment service at runtime.
+
+Requirements:
+=============
+
+1️) Create interface Payment
+String pay(double amount);
+
+2️) Create implementation classes:
+CreditCardPayment
+DebitCardPayment
+UPIPayment
+
+Special Conditions (Important Twist):
+Each class must:
+Be annotated with @Component
+Use names:
+"credit"
+"debit"
+"upi"
+
+-> Discount Logic:
+Credit Card → 10% discount
+Debit Card → 5% discount
+UPI → 15% discount
+
+-> Final Amount Formula:
+Final Amount = Amount − (Amount × Discount)
+
+-> Output Format:
+"Paid <finalAmount> using Credit Card"
+"Paid <finalAmount> using Debit Card"
+"Paid <finalAmount> using UPI"
+
+3️) Create Factory class PaymentFactory
+Conditions:
+Annotate with @Component
+Use Map injection:
+@Autowired
+private Map<String, Payment> paymentMap;
+
+Method:
+public Payment getPayment(String type)
+Logic:
+Convert type to lowercase
+Fetch from map
+If not found → throw exception
+
+4️) Create Configuration class
+@Configuration
+@ComponentScan(basePackages = "your package name")
+
+5️) Create Main class (ELC)
+
+Class Name: PaymentApp
+
+Responsibilities:
+Load Spring container
+Take input:
+Payment type
+Amount
+Get object using factory
+Call pay(amount)
+Print result
+Handle invalid input
+
+Sample Input/Output:
+--------------------
+Enter payment type: upi
+Enter amount: 1000
+Paid 850.0 using UPI
+
+###################################################
