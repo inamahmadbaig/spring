@@ -1,0 +1,43 @@
+Ques-2 Food Delivery Pricing System (Swiggy/Zomato-like)
+-----------------------------------------------------------------------
+
+You are building a Food Delivery System where delivery charges vary based on delivery type.
+
+
+🚚 Delivery Types:
+------------------------
+Normal Delivery:
+₹30 base + ₹5 per km
+Fast Delivery:
+₹50 base + ₹10 per km
+Scheduled Delivery:
+₹20 base + ₹4 per km (discounted)
+
+🏗️ Classes & Variables:
+------------------------------
+1. Interface: DeliveryChargeStrategy
+double calculateCharge(double distance);
+2. Concrete Classes:
+NormalDelivery
+Variables:
+double baseCharge = 30
+double perKm = 5
+FastDelivery
+Variables:
+double baseCharge = 50
+double perKm = 10
+ScheduledDelivery
+Variables:
+double baseCharge = 20
+double perKm = 4
+3. Context Class: DeliveryService
+Variables:
+DeliveryChargeStrategy strategy
+Methods:
+setStrategy(DeliveryChargeStrategy strategy)
+calculateTotal(double distance)
+4. AppConfig Class:
+Define beans for all strategies
+Inject into DeliveryService
+Support runtime switching
+
