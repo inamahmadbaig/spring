@@ -1,0 +1,44 @@
+
+Question 2: Shipping Cost Calculation System Using Strategy Design Pattern
+			(Spring + Annotation(AppConfig))
+=============================================================================
+You are tasked with building a Shipping Cost Calculation System for an e-commerce platform that sells a variety of products. The system needs to calculate shipping costs based on various shipping methods, such as Standard Shipping, Express Shipping, and Overnight Shipping. Each shipping method has its own logic for calculating the cost, factoring in parameters like weight, distance, and urgency of delivery.
+
+Shipping Methods and Their Associated Costs:
+Standard Shipping:
+
+Cost Calculation:
+Charges $5 per kg for the weight of the product.
+Charges $0.5 per km for the delivery distance.
+
+Express Shipping:
+
+Cost Calculation:
+Charges $10 per kg for the weight of the product.
+Charges $1 per km for the delivery distance.
+
+Description: Express shipping provides faster delivery, which results in a higher cost compared to standard shipping.
+
+Overnight Shipping:
+
+Cost Calculation:
+Charges $20 per kg for the weight of the product.
+Charges $2 per km for the delivery distance.
+
+Description: A premium service for overnight delivery, the most expensive shipping option.
+
+System Requirements:
+Support multiple shipping methods: The system must support various shipping methods (e.g., Standard, Express, Overnight).
+
+Use different cost calculation strategies: Each shipping method should have its own unique cost calculation logic based on the weight and distance.
+
+Extensibility: The system should be easily extensible to support new shipping methods (e.g., Same Day Shipping, International Shipping) without modifying the core logic.
+
+Leverage the Strategy Design Pattern: Implement the Strategy Design Pattern to ensure that the shipping methods can be easily switched, and the cost calculation strategy can be dynamically selected.
+
+Classes and Interface Requirements:
+Define a common strategy interface: Create an interface ShippingCostStrategy with a method calculateShippingCost that accepts the weight and distance as parameters and returns the calculated shipping cost.
+
+Create concrete strategies: Implement concrete strategies for StandardShipping, ExpressShipping, and OvernightShipping. Each strategy should contain the cost calculation logic as specified above.
+
+Create a context class: Design a class ShippingCostContext that will use the injected strategy to calculate the shipping cost. This class should allow for dynamic switching of strategies.
