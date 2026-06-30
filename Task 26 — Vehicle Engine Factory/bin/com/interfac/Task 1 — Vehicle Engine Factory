@@ -1,0 +1,27 @@
+Task 1 — Vehicle Engine Factory
+
+🎯 Objective:
+Implement a Spring Core application where a FactoryBean dynamically produces different engine objects for vehicles.
+
+📌 Requirements:
+
+Define an Engine interface with methods like start() and stop().
+
+Provide implementations for:
+
+ElectricEngine
+
+DieselEngine
+
+HybridEngine
+
+Create a VehicleEngineFactoryBean that returns the correct engine type based on a configuration property (e.g., engine.type).
+
+Configure the factory in Spring and test by retrieving the engine bean and calling its methods.
+
+✅ Expected Output:
+
+If engine.type=electric
+
+Electric Engine started using battery power.
+Electric Engine stopped.
