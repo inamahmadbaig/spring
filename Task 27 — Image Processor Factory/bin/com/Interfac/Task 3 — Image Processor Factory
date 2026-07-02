@@ -1,0 +1,25 @@
+Task 3 — Image Processor Factory
+
+🎯 Objective:
+Build a Spring Core application where a FactoryBean dynamically provides different types of image processors.
+
+📌 Requirements:
+
+Define an ImageProcessor interface with a process() method.
+
+Implement three processors:
+
+ResizeProcessor
+
+FilterProcessor
+
+WatermarkProcessor
+
+Create an ImageProcessorFactoryBean that returns the correct processor implementation based on a property value (e.g., image.operation).
+
+Configure the factory in Spring and test by retrieving the bean and invoking process().
+
+✅ Expected Output:
+
+If image.operation=resize
+Image resized successfully!
