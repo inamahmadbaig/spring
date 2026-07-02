@@ -1,0 +1,18 @@
+Ques 01 — Online Shopping Cart System.
+
+Project Overview
+-----------------
+Develop a Spring Core application to manage shopping cart details using setter injection.
+
+Classes
+-------
+Product: productId, name, price
+Cart: cartId, userName, product (dependency)
+
+System Description
+------------------
+The cart holds product details which are injected using setter methods configured in XML.
+
+Real-Time Scenario
+-------------------
+Used in e-commerce applications where users add products to cart dynamically.
