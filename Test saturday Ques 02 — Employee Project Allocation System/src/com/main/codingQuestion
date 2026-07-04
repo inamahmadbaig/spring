@@ -1,0 +1,23 @@
+Ques 02 — Employee Project Allocation System.
+
+Project Overview
+----------------
+
+Create a Spring Core application to assign projects to employees using setter injection.
+
+Classes
+--------
+Project: projectId, projectName
+Employee: empId, name, project (dependency)
+
+System Description
+------------------
+Project details are injected into employee objects dynamically using setter injection configured in XML.
+
+Real-Time Scenario
+-------------------
+Used in IT companies to allocate projects to employees.
+
+Expected Output
+----------------
+Display employee and project details
