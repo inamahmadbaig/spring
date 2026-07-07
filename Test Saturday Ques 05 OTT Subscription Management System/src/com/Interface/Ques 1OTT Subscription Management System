@@ -1,0 +1,14 @@
+Ques 1: OTT Subscription Management System
+
+Project Overview
+----------------
+Develop a Spring Core application to manage OTT subscriptions where users can activate plans from different streaming platforms.
+
+Requirements
+The application should support multiple OTT providers such as Netflix, Amazon Prime, and Hotstar for subscription activation. 
+Use @Qualifier to inject the selected OTT provider and process the subscription request.
+
+Flow
+User chooses an OTT platform
+System selects the corresponding subscription provider
+Selected subscription plan gets activated
