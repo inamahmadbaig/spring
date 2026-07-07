@@ -1,0 +1,14 @@
+
+Ques 02:Smart Home Control System
+
+Project Overview
+----------------
+Develop a Spring Core application to control smart home appliances through multiple device services such as Smart Light, Smart Fan, and Smart AC.
+
+Requirements
+The application should support multiple device control services and use @Primary to configure one device as the default controlled appliance.
+
+Flow
+User gives control command
+Default smart device service handles the request
+Device operation is performed
