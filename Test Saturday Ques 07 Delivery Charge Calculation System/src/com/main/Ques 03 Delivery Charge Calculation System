@@ -1,0 +1,21 @@
+
+Ques 03: Delivery Charge Calculation System
+
+Project Overview
+----------------
+Develop a Spring Core application to calculate delivery charges using different delivery strategies.
+
+Requirements
+
+The application should support the following strategies with different charges:
+
+Standard Delivery — ₹50 charge
+Express Delivery — ₹100 charge
+Same-Day Delivery — ₹200 charge
+
+Charges should be calculated based on the delivery option selected.
+
+Flow
+User selects delivery type
+Corresponding strategy calculates charges
+Final delivery cost is displayed
