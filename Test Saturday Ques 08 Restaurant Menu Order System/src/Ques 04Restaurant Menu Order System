@@ -1,0 +1,22 @@
+
+Ques 04:Restaurant Menu Order System
+
+Project Overview
+----------------
+Develop a Spring Core application to create food order objects dynamically using Factory Design Pattern.
+
+Requirements
+
+The application should support menu items with prices:
+
+Pizza — ₹250
+Burger — ₹150
+Biryani — ₹300
+
+Factory should create the selected food order object and calculate bill amount.
+
+Flow
+Customer selects food item
+Factory creates matching order object
+Order preparation starts
+Final bill amount is displayed
