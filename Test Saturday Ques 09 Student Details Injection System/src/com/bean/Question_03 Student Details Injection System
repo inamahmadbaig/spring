@@ -1,0 +1,26 @@
+
+Question_03: Student Details Injection System
+
+Project Explanation
+
+This Spring Core application demonstrates how to inject external configuration values into a bean using @Value. 
+Student details like ID, name, and course are stored in a properties file and automatically injected into the Student class. 
+This avoids hardcoding values inside the program and makes the application flexible.
+
+Concept:
+
+External configuration using application.properties
+Dependency injection using @Value
+Loose coupling between code and data
+
+Fields
+------
+studentId
+studentName
+course
+
+Operations
+-----------
+Read values from properties file
+Inject values into bean
+Display student details
