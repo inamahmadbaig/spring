@@ -1,0 +1,22 @@
+
+Ques 04 Discount Calculation System
+
+Project Explanation
+
+Spring Core application where discount is calculated dynamically using expressions inside @Value. 
+The base price and discount percentage are injected and final price is computed automatically.
+
+Concept
+Dynamic calculation using @Value
+
+
+Fields:
+-------
+price
+discountPercent
+finalPrice 
+
+Operations
+Inject price and discount
+Calculate final price 
+Display bill
